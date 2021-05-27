@@ -68,10 +68,12 @@ public class Main {
             todaslasCarreras.add("\n");
             todaslasCarreras.add(primero.getEtiqueta().toString() + ":");
             todaslasCarreras.add("\n");
-            String indices = primero.getDato().getIndiceCarrera().getRaiz().inOrden();
-            String[] partes = indices.split("-");
-            for (String linea : partes) {
-                todaslasCarreras.add(linea);
+            Lista<Alumno> indices= new Lista<>();
+            primero.getDato().getIndiceCarrera().getRaiz().inOrden(indices);
+            Nodo<Alumno> aux = indices.getPrimero();
+            while (aux != null) {
+                todaslasCarreras.add(aux.getEtiqueta() + "," + aux.getDato().getCodigo());
+                aux = aux.getSiguiente();
             }
             primero = primero.getSiguiente();
         }
