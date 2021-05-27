@@ -34,31 +34,16 @@ public class TArbolBBUtest{
         arbolito.insertar(alumno4);
     }
 
-//    @Test
-//    @DisplayName("Test para validar que cambie el tamaño de carreras")
-//    public void test1() {
-//        assertEquals(5, arbolito.armarIndicesCarreras(carreras).cantElementos());
-//    }
-//    @Test
-//    @DisplayName("Test para validar")
-//    public void test1() {
-//        assertEquals(, , );
-//    }
+    @Test
+    @DisplayName("Test para validar que cambie el tamaño de carreras")
+    public void test1() {
+        arbolito.armarIndicesCarreras(carreras);
+        assertEquals(5,arbolito.obtenerTamanio());
+    }
 //    @Test
 //    @DisplayName("Test para validar")
 //    public void test1() {
 //        assertEquals(, , );
-//    }
-//    @Test
-//    @DisplayName("Test para validar")
-//    public void test1() {
-//        assertEquals(, , );
-//    }
-//    @Test
-//    @DisplayName("Test para validar")
-//    public void test1() {
-//        assertEquals(, , );
-//    }
 }
 
 
