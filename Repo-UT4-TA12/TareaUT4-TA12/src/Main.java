@@ -45,17 +45,18 @@ public class Main {
         List<String> salida = new ArrayList<>();
         salida.add(carreraIndicada);
 
-        while (nodoActual != null)
+        while (nodoActual != null) {
             System.out.println(nodoActual.getDato().getNombreCarrera());
-        if (nodoActual.getDato().getNombreCarrera().trim().compareTo(carreraIndicada) == 0) {
-            Lista<Alumno> listaAlumnos = nodoActual.getDato().getIndiceCarrera().inorden();
-            Nodo<Alumno> alumno = listaAlumnos.getPrimero();
-            while (alumno != null) {
-                salida.add(alumno.getDato().getCodigo() + "," + alumno.getDato().getApellido());
-                alumno = alumno.getSiguiente();
+            if (nodoActual.getDato().getNombreCarrera().trim().compareTo(carreraIndicada) == 0) {
+                Lista<Alumno> listaAlumnos = nodoActual.getDato().getIndiceCarrera().inorden();
+                Nodo<Alumno> alumno = listaAlumnos.getPrimero();
+                while (alumno != null) {
+                    salida.add(alumno.getDato().getCodigo() + "," + alumno.getDato().getApellido());
+                    alumno = alumno.getSiguiente();
+                }
             }
+            nodoActual = nodoActual.getSiguiente();
         }
-        nodoActual = nodoActual.getSiguiente();
 
         String[] salidas = salida.toArray(new String[0]);
         ManejadorArchivosGenerico.escribirArchivo("unacarrera.txt", salidas);
